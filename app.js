@@ -51,7 +51,7 @@ function setStatus(msg) {
 function renderCurrent(data) {
   const { location, current } = data;
   document.getElementById("locationName").textContent =
-    `${location.name}, ${location.country}`;
+    `${location.name}, ${translateCountry(location.country)}`;
   document.getElementById("conditionIcon").src = `https:${current.condition.icon}`;
   document.getElementById("conditionIcon").alt = current.condition.text;
   document.getElementById("temp").textContent = `${current.temp_c} °C`;
