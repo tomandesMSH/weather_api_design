@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Počasí</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Počasí a kvalita ovzduší</h1>
+
+    <form id="searchForm" class="search">
+      <input type="text" id="cityInput" placeholder="Zadej město (např. Brno)" required>
+      <button type="submit">Zobrazit</button>
+    </form>
+
+    <p id="status" class="status" hidden></p>
+
+    <section id="result" class="result" hidden>
+      <div class="current card">
+        <h2 id="locationName"></h2>
+        <div class="current-main">
+          <img id="conditionIcon" alt="">
+          <div>
+            <p class="temp" id="temp"></p>
+            <p id="conditionText"></p>
+          </div>
+        </div>
+        <ul class="details">
+          <li>Pocitová teplota: <span id="feelslike"></span></li>
+          <li>Vlhkost: <span id="humidity"></span></li>
+          <li>Vítr: <span id="wind"></span></li>
+          <li>UV index: <span id="uv"></span></li>
+        </ul>
+      </div>
+
+      <div class="aqi card">
+        <h3>Kvalita ovzduší</h3>
+        <p>US EPA index: <strong id="epaIndex"></strong> — <span id="epaLabel"></span></p>
+        <ul class="details">
+          <li>PM2.5: <span id="pm25"></span> µg/m³</li>
+          <li>PM10: <span id="pm10"></span> µg/m³</li>
+          <li>O3: <span id="o3"></span> µg/m³</li>
+        </ul>
+      </div>
+
+      <div class="forecast card">
+        <h3>Předpověď na další dny</h3>
+        <div id="forecastDays" class="forecast-days"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
